@@ -54,7 +54,7 @@ export default class Demo extends Component {
                   flipMoveOptions={() => ({
                     enterAnimation: 'accordionVertical',
                     leaveAnimation: 'accordionVertical',
-                    duration: 300
+                    duration: 400
                   })}
                   onStartAnimation={onStartAnimation}
                   onEndAnimation={onEndAnimation}

@@ -247,9 +247,10 @@ table {
   font-style: normal;
 }
 .canvas {
-  max-width: 375px;
+  /* max-width: 375px; */
   margin: 0 auto;
-  background: black;
+  /* background: black; */
+  height: 100%;
   position: relative;
   overflow: hidden;
   border-top-right-radius: 18px;

@@ -27,17 +27,13 @@ const CloseIcon = styled(Icon)`
   cursor: pointer;
   font-size: 2rem;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: -2px;
+  top: -3px;
   color: #ff383f;
   transition: color 200ms ease-in;
   &:hover {
     color: #a9a9a9;
   }
-  ${media.handheld`
-  right:0;
-  top: 0;
-  `};
 `
 
 const CloseIconWrapper = styled.span`
@@ -68,10 +64,7 @@ export const Hovered = styled.div`
 
 export const HoveredFlexCenter = styled.div`
   background: white;
-  padding: 1em 1em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-  border-radius: 0.28571429rem;
-  border: 1px solid rgba(0, 0, 0, 0.09);
+
   display: flex;
   align-items: center;
   flex-direction: column;
