@@ -23,7 +23,7 @@ export default class Grades extends React.Component {
   }
 
   render() {
-    const {data, isActive, actions: {setNextFrame}} = this.props
+    const {data, isActive, actions: {setNextFrame, getNextFrame}} = this.props
     const {title, department} = data
 
     const grades = department.values
@@ -37,19 +37,27 @@ export default class Grades extends React.Component {
         frameHeight={isActive ? '80vh' : '10vh'}
       >
         <HoveredFlexCenter>
-          <h1>{title}</h1>
-          {grades.map(({title, description, specialism}) => (
-            <div
-              key={title}
-              onClick={() =>
-                setNextFrame('Roles', {title, description, specialism})
-              }
-            >
-              <div>
-                <strong>{title}</strong> - {description}
-              </div>
+          {isActive ? (
+            <div>
+              <h1>{title}</h1>
+              {grades.map(({title, description, specialism}) => (
+                <div
+                  key={title}
+                  onClick={() =>
+                    setNextFrame('Roles', {title, description, specialism})
+                  }
+                >
+                  <div>
+                    <strong>{title}</strong> - {description}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            <div>
+              <h2>{getNextFrame().state.title}</h2>
+            </div>
+          )}
         </HoveredFlexCenter>
       </Frame>
     )

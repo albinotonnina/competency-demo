@@ -29,7 +29,7 @@ export default class Roles extends React.Component {
       description,
       specialism,
       isActive,
-      actions: {setNextFrame}
+      actions: {setNextFrame, getNextFrame}
     } = this.props
     // debugger //eslint-disable-line
     // const roles = gradeData.roles
@@ -43,25 +43,33 @@ export default class Roles extends React.Component {
         frameHeight={isActive ? '80vh' : '10vh'}
       >
         <HoveredFlexCenter>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          {specialism.map(role => {
-            // debugger //eslint-disable-line
-            return (
-              <div
-                key={role.title}
-                onClick={() =>
-                  setNextFrame('Levels', {
-                    levels: role.levels,
-                    title: role.title,
-                    description: role.description
-                  })
-                }
-              >
-                <strong>{role.title}</strong> - {role.description}
-              </div>
-            )
-          })}
+          {isActive ? (
+            <div>
+              <h1>{title}</h1>
+              <p>{description}</p>
+              {specialism.map(role => {
+                // debugger //eslint-disable-line
+                return (
+                  <div
+                    key={role.title}
+                    onClick={() =>
+                      setNextFrame('Levels', {
+                        levels: role.levels,
+                        title: role.title,
+                        description: role.description
+                      })
+                    }
+                  >
+                    <strong>{role.title}</strong> - {role.description}
+                  </div>
+                )
+              })}
+            </div>
+          ) : (
+            <div>
+              <h2>{getNextFrame().state.title}</h2>
+            </div>
+          )}
         </HoveredFlexCenter>
       </Frame>
     )

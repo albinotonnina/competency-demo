@@ -29,7 +29,7 @@ export default class Levels extends React.Component {
       description,
       levels,
       isActive,
-      actions: {setNextFrame}
+      actions: {setNextFrame, getNextFrame}
     } = this.props
 
     return (
@@ -40,25 +40,33 @@ export default class Levels extends React.Component {
         frameHeight={isActive ? '80vh' : '10vh'}
       >
         <HoveredFlexCenter>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          {levels.map(({title, description, profile}) => {
-            // debugger //eslint-disable-line
-            return (
-              <div
-                key={title}
-                onClick={() =>
-                  setNextFrame('Profile', {
-                    profile,
-                    title,
-                    description
-                  })
-                }
-              >
-                <strong>{title}</strong> - {description}
-              </div>
-            )
-          })}
+          {isActive ? (
+            <div>
+              <h1>{title}</h1>
+              <p>{description}</p>
+              {levels.map(({title, description, profile}) => {
+                // debugger //eslint-disable-line
+                return (
+                  <div
+                    key={title}
+                    onClick={() =>
+                      setNextFrame('Profile', {
+                        profile,
+                        title,
+                        description
+                      })
+                    }
+                  >
+                    <strong>{title}</strong> - {description}
+                  </div>
+                )
+              })}
+            </div>
+          ) : (
+            <div>
+              <h2>{getNextFrame().state.title}</h2>
+            </div>
+          )}
         </HoveredFlexCenter>
       </Frame>
     )

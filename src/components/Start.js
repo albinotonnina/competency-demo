@@ -23,7 +23,7 @@ export default class Start extends React.Component {
   }
 
   render() {
-    const {isActive, actions: {setNextFrame}} = this.props
+    const {isActive, actions: {setNextFrame, getNextFrame}} = this.props
 
     const {title, description, int_ext, cta_question} = Data
 
@@ -35,15 +35,23 @@ export default class Start extends React.Component {
         frameHeight={isActive ? '80vh' : '10vh'}
       >
         <HoveredFlexCenter>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <h2>{cta_question}</h2>
-          <p onClick={() => setNextFrame('Grades', {data: int_ext[0]})}>
-            {int_ext[0].title}
-          </p>
-          <p onClick={() => setNextFrame('Grades', {data: int_ext[1]})}>
-            {int_ext[1].title}
-          </p>
+          {isActive ? (
+            <div>
+              <h1>{title}</h1>
+              <p>{description}</p>
+              <h2>{cta_question}</h2>
+              <p onClick={() => setNextFrame('Grades', {data: int_ext[0]})}>
+                {int_ext[0].title}
+              </p>
+              <p onClick={() => setNextFrame('Grades', {data: int_ext[1]})}>
+                {int_ext[1].title}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h2>{getNextFrame().state.data.title}</h2>
+            </div>
+          )}
         </HoveredFlexCenter>
       </Frame>
     )
