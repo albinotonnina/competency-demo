@@ -1,0 +1,99 @@
+.App h1,
+.App h2 {
+  color: black;
+  text-transform: inherit;
+}
+
+/* .App .ant-spin-nested-loading {
+  height: calc(50vh - 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 500px;
+  background: #efefef;
+  background: linear-gradient(141deg, #a1ddeb 0%, #caebf2 51%, #89e4f8 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-logo {
+  animation: spin 16s linear 0s infinite normal;
+  height: 180px;
+  cursor: pointer;
+  fill: #ff383f;
+  transition: fill 300ms ease-out;
+  animation-play-state: paused;
+}
+
+.App-logo:hover {
+  fill: #61dafb;
+  animation-play-state: running;
+}
+
+.App-header {
+  animation: spin 8s linear 0s infinite normal;
+  height: 180px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.githubCorner {
+  z-index: 999999;
+}
+
+@media (max-width: 1024px) {
+  .githubCorner {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.start {
+  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+  background-image: linear-gradient(top, #f4f1ee, #fff);
+  border-radius: 50%;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  height: 240px;
+  position: relative;
+  width: 240px;
+  transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start:hover {
+  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+  background-image: linear-gradient(top, #fff, #f4f1ee);
+  color: #0088cc;
+}
+
+.start.active {
+  background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+  background-image: linear-gradient(top, #efedec, #f7f4f4);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4),
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  opacity: 0;
+}
