@@ -1,16 +1,24 @@
-import React from "react"
-import { render } from "react-dom"
-import Demo from "./Demo"
-import "./App.css"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Demo />
-      </div>
-    )
-  }
+import {AppContainer} from 'react-hot-loader'
+
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+    document.getElementById('root')
+  )
 }
 
-render(<App />, document.getElementById("root"))
+// Render once
+render(App)
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App)
+  })
+}

@@ -1,19 +1,11 @@
-.App h1,
-.App h2 {
-  color: black;
-  text-transform: inherit;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-
-/* .App .ant-spin-nested-loading {
-  height: calc(50vh - 8rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 .App {
   text-align: center;
-  width: 100vw;
   height: 100vh;
   min-height: 500px;
   background: #efefef;
@@ -75,6 +67,7 @@
   border-radius: 50%;
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
     inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  display: block;
   height: 240px;
   position: relative;
   width: 240px;
