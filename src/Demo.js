@@ -15,7 +15,8 @@ export default class Demo extends Component {
       isActive: activePage === page,
       isAnimating: this.state.isAnimating
     }
-    const Page = id ? Components[id] : Components.Users
+    console.log('Components', Components)
+    const Page = id ? Components[id] : Components.Start
 
     return <Page {...extraProps} {...state} actions={actions} />
   }
@@ -47,7 +48,7 @@ export default class Demo extends Component {
               isOpen={this.state.isOpen}
             />,
             portal(
-              <ItemsContainer>
+              <ItemsContainer vertical>
                 <MyMagicHatContainer
                   renderFrame={this.renderFrame}
                   onStartAnimation={onStartAnimation}
