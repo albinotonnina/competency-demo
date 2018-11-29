@@ -41,26 +41,35 @@ export default class Levels extends React.Component {
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              {levels.map(({title, description, profile}) => {
-                // debugger //eslint-disable-line
-                return (
-                  <div
-                    key={title}
-                    onClick={() =>
-                      setNextFrame('Profile', {
-                        profile,
-                        title,
-                        description
-                      })
-                    }
-                  >
-                    <strong>{title}</strong> - {description}
-                  </div>
-                )
-              })}
+            <div className="canvas">
+              <div className="cardImage cardImage3" />
+              <div className="cardMask" />
+              <div className="cardWrapper active">
+                <h2 className="titleText">{title}</h2>
+                <h3 className="question">Question goes here?</h3>
+                <p className="information informationLarge">{description}</p>
+                <form>
+                  {levels.map(({title, description, profile}) => (
+                    <div key={title}>
+                      <button
+                        className="optionButton"
+                        onClick={() =>
+                          setNextFrame('Profile', {
+                            profile,
+                            title,
+                            description
+                          })
+                        }
+                      >
+                        {title}
+                      </button>
+                      <p className="information withBottomMargin">
+                        {description}
+                      </p>
+                    </div>
+                  ))}
+                </form>
+              </div>
             </div>
           ) : (
             <div>

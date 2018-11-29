@@ -13,10 +13,10 @@ export const media = {
 const Container = styled.div`
   width: ${props => props.frameWidth || '50vw'};
   height: ${props => props.frameHeight || 'auto'};
-
+  z-index: ${props => (props.isActive ? 33 : 66)};
   position: relative;
   display: flex;
-  transform-origin: 50% 100%;
+  transform-origin: 50% 50%;
   & > * {
     flex: 1 1 auto;
     overflow: auto;
@@ -27,8 +27,8 @@ const CloseIcon = styled(Icon)`
   cursor: pointer;
   font-size: 2rem;
   position: absolute;
-  right: -8px;
-  top: -8px;
+  right: 0px;
+  top: 0px;
   color: #ff383f;
   transition: color 200ms ease-in;
   &:hover {

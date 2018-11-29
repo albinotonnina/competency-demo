@@ -51,6 +51,11 @@ export default class Demo extends Component {
               <ItemsContainer vertical>
                 <MyMagicHatContainer
                   renderFrame={this.renderFrame}
+                  flipMoveOptions={() => ({
+                    enterAnimation: 'accordionVertical',
+                    leaveAnimation: 'accordionVertical',
+                    duration: 300
+                  })}
                   onStartAnimation={onStartAnimation}
                   onEndAnimation={onEndAnimation}
                 />

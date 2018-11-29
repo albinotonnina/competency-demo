@@ -44,26 +44,35 @@ export default class Roles extends React.Component {
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              {specialism.map(role => {
-                // debugger //eslint-disable-line
-                return (
-                  <div
-                    key={role.title}
-                    onClick={() =>
-                      setNextFrame('Levels', {
-                        levels: role.levels,
-                        title: role.title,
-                        description: role.description
-                      })
-                    }
-                  >
-                    <strong>{role.title}</strong> - {role.description}
-                  </div>
-                )
-              })}
+            <div className="canvas">
+              <div className="cardImage cardImage2" />
+              <div className="cardMask" />
+              <div className="cardWrapper active">
+                <h2 className="titleText">{title}</h2>
+                <h3 className="question">Question goes here?</h3>
+                <p className="information informationLarge">{description}</p>
+                <form>
+                  {specialism.map(({title, description, levels}) => (
+                    <div key={title}>
+                      <button
+                        className="optionButton"
+                        onClick={() =>
+                          setNextFrame('Levels', {
+                            levels: levels,
+                            title: title,
+                            description: description
+                          })
+                        }
+                      >
+                        {title}
+                      </button>
+                      <p className="information withBottomMargin">
+                        {description}
+                      </p>
+                    </div>
+                  ))}
+                </form>
+              </div>
             </div>
           ) : (
             <div>

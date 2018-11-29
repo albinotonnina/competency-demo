@@ -36,16 +36,28 @@ export default class Start extends React.Component {
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              <h2>{cta_question}</h2>
-              <p onClick={() => setNextFrame('Grades', {data: int_ext[0]})}>
-                {int_ext[0].title}
-              </p>
-              <p onClick={() => setNextFrame('Grades', {data: int_ext[1]})}>
-                {int_ext[1].title}
-              </p>
+            <div className="canvas">
+              <div className="cardImage cardImage1" />
+              <div className="cardMask" />
+              <div className="cardWrapper active">
+                <h2 className="titleText">{title}</h2>
+                <h3 className="question">{cta_question}</h3>
+                <p className="information informationLarge">{description}</p>
+                <form>
+                  <h3
+                    className="question"
+                    onClick={() => setNextFrame('Grades', {data: int_ext[0]})}
+                  >
+                    {int_ext[0].title}
+                  </h3>
+                  <h3
+                    className="question"
+                    onClick={() => setNextFrame('Grades', {data: int_ext[1]})}
+                  >
+                    {int_ext[1].title}
+                  </h3>
+                </form>
+              </div>
             </div>
           ) : (
             <div>

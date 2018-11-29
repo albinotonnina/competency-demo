@@ -38,20 +38,42 @@ export default class Grades extends React.Component {
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div>
-              <h1>{title}</h1>
-              {grades.map(({title, description, specialism}) => (
-                <div
-                  key={title}
-                  onClick={() =>
-                    setNextFrame('Roles', {title, description, specialism})
-                  }
-                >
-                  <div>
-                    <strong>{title}</strong> - {description}
-                  </div>
-                </div>
-              ))}
+            <div className="canvas">
+              <div className="cardImage cardImage4" />
+              <div className="cardMask" />
+              <div className="cardWrapper active">
+                <h2 className="titleText">{title}</h2>
+                <h3 className="question">Question goes here?</h3>
+                <p className="information informationLarge">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+                  <br />
+                  <br />
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <form>
+                  {grades.map(({title, description, specialism}) => (
+                    <div key={title}>
+                      <button
+                        className="optionButton"
+                        onClick={() =>
+                          setNextFrame('Roles', {
+                            title,
+                            description,
+                            specialism
+                          })
+                        }
+                      >
+                        {title}
+                      </button>
+                      <p className="information withBottomMargin">
+                        {description}
+                      </p>
+                    </div>
+                  ))}
+                </form>
+              </div>
             </div>
           ) : (
             <div>
