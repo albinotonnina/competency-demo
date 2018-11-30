@@ -29,7 +29,6 @@ export default class Profile extends React.Component {
       title,
       description,
       profile,
-
       isActive,
       actions: {setNextFrame, getNextFrame}
     } = this.props
@@ -44,17 +43,20 @@ export default class Profile extends React.Component {
         <HoveredFlexCenter>
           {isActive ? (
             <div className="canvas">
-              <div className="cardImage  cardImageBorder" />
-              <div className="cardMask cardMaskBorder" />
-              <div className="cardWrapper active" style={{background: 'black'}}>
-                <h2 className="titleText">{title}</h2>
-                {/* <h3 className="question">{question}</h3> */}
-
-                <img
-                  src="./career-acer-profile.png"
-                  alt=""
-                  onClick={() => setNextFrame('Matrix')}
-                />
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '80vh'
+                }}
+              >
+                <h2
+                  className="titleText blackFont"
+                  onClick={() => setNextFrame('Start')}
+                >
+                  Made with the Magic Hat 🎩✨
+                </h2>
               </div>
             </div>
           ) : (

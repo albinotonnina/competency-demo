@@ -27,8 +27,6 @@ export default class Profile extends React.Component {
   render() {
     const {
       title,
-      description,
-      profile,
 
       isActive,
       actions: {setNextFrame, getNextFrame}
@@ -39,7 +37,7 @@ export default class Profile extends React.Component {
         onClickClose={this.goBack}
         isActive={isActive}
         frameWidth="100vw"
-        frameHeight={isActive ? '90vh' : '5vh'}
+        frameHeight={isActive ? '95vh' : '10vh'}
       >
         <HoveredFlexCenter>
           {isActive ? (
@@ -51,9 +49,9 @@ export default class Profile extends React.Component {
                 {/* <h3 className="question">{question}</h3> */}
 
                 <img
-                  src="./career-acer-profile.png"
+                  src="./matrix.png"
                   alt=""
-                  onClick={() => setNextFrame('Matrix')}
+                  onClick={() => setNextFrame('Made')}
                 />
               </div>
             </div>
