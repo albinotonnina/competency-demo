@@ -16,12 +16,10 @@ body {
 }
 
 .App-logo {
-  animation: spin 16s linear 0s infinite normal;
   height: 180px;
   cursor: pointer;
   fill: #ff383f;
   transition: fill 300ms ease-out;
-  animation-play-state: paused;
 }
 
 .App-logo:hover {
@@ -30,7 +28,6 @@ body {
 }
 
 .App-header {
-  animation: spin 8s linear 0s infinite normal;
   height: 180px;
 }
 
