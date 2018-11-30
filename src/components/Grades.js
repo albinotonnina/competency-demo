@@ -52,6 +52,7 @@ export default class Grades extends React.Component {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
+
                 <form>
                   {grades.map(({title, description, specialism}) => (
                     <div key={title}>

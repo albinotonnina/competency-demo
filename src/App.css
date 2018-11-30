@@ -3,10 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+#root {
+  height: 100%;
+}
 .App {
   text-align: center;
-  height: 100vh;
+  height: 100%;
   min-height: 500px;
   display: flex;
   align-items: center;
@@ -250,11 +252,12 @@ table {
   /* max-width: 375px; */
   margin: 0 auto;
   /* background: black; */
-  height: 100%;
+  /* min-height: 100%; */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-top-right-radius: 18px;
   border-top-left-radius: 18px;
+  flex: 1 1 auto;
 }
 .cardImage,
 .cardMask {
