@@ -45,12 +45,12 @@ export default class Levels extends React.Component {
         <HoveredFlexCenter>
           {isActive ? (
             <div className="canvas">
-              <div className="cardImage cardImage3" />
-              <div className="cardMask" />
+              <div className="cardImage cardImage3 cardImageBorder" />
+              <div className="cardMask cardMaskBorder" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
                 <h3 className="question">{question}</h3>
-                <p className="information informationLarge">{description}</p>
+                {/* <p className="information informationLarge">{description}</p> */}
                 <form>
                   {answers.map(({answer, profile, title, description}) => (
                     <div key={answer}>

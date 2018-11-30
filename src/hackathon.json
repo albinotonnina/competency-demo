@@ -10,33 +10,29 @@
     {
       "answer": "An awesome ASOSer already",
       "title": "department",
-      "question": "Hey what area are you most passionate about? ",
-      "description":
-        "What might you want to do next? ASOS has unlimited possibilities don’t let them pass you by. ",
+      "question": "What's your passion?",
+      "description": "What might you want to do next?",
       "answers": [
         {
           "answer": "QA",
-          "description":
-            "Do you like to break things and look to improve every little detail?"
+          "description": "Do you like to break things?"
         },
         {
           "answer": "Engineering",
           "title": "role",
-          "question": "What role is your interest?",
-          "description":
-            "Cool. Your interested in engineering. We love and worship engineers at ASOS. Let’s get specific about your thing.",
+          "question": "What's your flavour?",
+          "description": "You are all about building things?",
           "answers": [
             {
               "answer": "Web",
               "title": "level",
               "question": "What level are you?",
-              "description":
-                "Let’s see where you are at in your career. We are passionate about people looking for the next step so don’t be scared to reach higher.",
+              "description": "Build the best web experience in the world?",
               "answers": [
                 {
                   "answer": "Grad",
                   "description":
-                    "Have you got real passion but little or no experience and want to be part of a team who will help you be the best?"
+                    "Got real passion but little or no experience? Want to be part of a team who will help you be the best?"
                 },
                 {
                   "answer": "Associate",
@@ -51,40 +47,36 @@
                 {
                   "answer": "Senior",
                   "description":
-                    "You are a master of web technologies, can mentor people and take on challenge after challenge"
+                    "You are a master of web technologies, can mentor people and take on challenge after challenge?"
                 },
                 {
                   "answer": "Senior II",
                   "description":
-                    "Hey you could lead but you prefer to be hands on and keep delivering great software.",
+                    "You could lead but you prefer to be hands on and keep delivering great software?",
                   "profile": {}
                 },
                 {
                   "answer": "Lead",
                   "description":
-                    "The responsibility of leading a team to produce truly excellent experiences for our users is your next challenge?"
+                    "Leading a team to produce truly excellent experiences for our users is your next challenge?"
                 }
               ]
             },
             {
               "answer": "Infrastructure",
-              "description":
-                "You love getting down with the latest cloud technologies?"
+              "description": "Love getting down with the latest cloud tech?"
             },
             {
               "answer": "Android",
-              "description":
-                "Do you want to work on a 5* App with millions of users?"
+              "description": "Build a 5* App with millions of users?"
             },
             {
               "answer": "Microservices",
-              "description":
-                "You love engineering scalable architectural solutions?"
+              "description": "Scalable architectural solutions?"
             },
             {
               "answer": "iOS",
-              "description":
-                "Do you want to work on a 5* App with millions of users?"
+              "description": "Build a 5* App with millions of users?"
             },
             {
               "answer": "Platform Engineer",
@@ -94,13 +86,11 @@
         },
         {
           "answer": "UX Designer",
-          "description":
-            "Is Innovating our shopping experience is where your at?"
+          "description": "Innovating is where you're at?"
         },
         {
           "answer": "Pattern Cutter",
-          "description":
-            "Can you see yourself creating clothes that delight our 20 something customers."
+          "description": "Create clothes to delight 20 somethings?"
         },
         {
           "answer": "BA",

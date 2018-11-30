@@ -44,12 +44,13 @@ export default class Profile extends React.Component {
         <HoveredFlexCenter>
           {isActive ? (
             <div className="canvas">
-              <div className="cardImage cardImage3" />
-              <div className="cardMask" />
-              <div className="cardWrapper active">
+              <div className="cardImage  cardImageBorder" />
+              <div className="cardMask cardMaskBorder" />
+              <div className="cardWrapper active" style={{background: 'black'}}>
                 <h2 className="titleText">{title}</h2>
                 {/* <h3 className="question">{question}</h3> */}
-                <p className="information informationLarge">{description}</p>
+
+                <img src="./career-acer-profile.png" alt="" />
               </div>
             </div>
           ) : (

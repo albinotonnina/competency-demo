@@ -33,25 +33,28 @@ export default class Start extends React.Component {
         isActive={isActive}
         frameWidth={isActive ? '100vw' : '100vw'}
         frameHeight={isActive ? '100vh' : '10vh'}
+        noBorder={true}
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div className="canvas centered">
-              <div className="cardImage cardImage1" />
-              <div className="cardMask" />
+            <div className="canvas">
+              <div className="headerStart">
+                <h3>{title}</h3>
+              </div>
               <div className="cardWrapper active">
-                <h2 className="titleText">{title}</h2>
-                <h3 className="question">{question}</h3>
-                <p className="information informationLarge">{description}</p>
+                <p className="information informationLarge blackFont lineHeightMore">
+                  {description}
+                </p>
+                <h3 className="question blackFont">{question}</h3>
                 <form>
                   <h3
-                    className="question"
+                    className="answer "
                     onClick={() => setNextFrame('Grades', {data: answers[0]})}
                   >
                     {answers[0].answer}
                   </h3>
                   <h3
-                    className="question"
+                    className="answer "
                     onClick={() => setNextFrame('Grades', {data: answers[1]})}
                   >
                     {answers[1].answer}

@@ -304,23 +304,14 @@ table {
   font-weight: 400;
   font-style: italic;
 }
-
 @font-face {
-  font-family: 'futura-pt';
-  src: url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.eot');
-  src: url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.eot?#iefix')
-      format('embedded-opentype'),
-    url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.woff2')
-      format('woff2'),
-    url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.woff')
-      format('woff'),
-    url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.ttf')
-      format('truetype'),
-    url('https://assets.asosservices.com/MasterLayout/WebFonts/FTN96__W/FTN96__W\.svg#FuturaPTWeb-ExtraBoldObl')
-      format('svg');
-  font-weight: 900;
-  font-style: italic;
+  font-family: 'futura-pt-bold';
+  src: url('FTN95.otf');
+
+  font-weight: 800;
+  font-weight: bold;
 }
+
 .canvas {
   /* max-width: 375px; */
   margin: 0 auto;
@@ -330,6 +321,60 @@ table {
   /* overflow: hidden; */
 
   flex: 1 1 auto;
+}
+
+.headerStart {
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('./images/bag-scale.png');
+  margin-bottom: 36px;
+}
+
+.headerStart:after {
+  content: '';
+
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.headerStart h3 {
+  text-align: center;
+  color: #fff;
+  font-family: 'futura-pt-bold', 'FuturaStd', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 44px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.answer {
+  border: 8px solid black;
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: black;
+  font-family: 'futura-pt-bold', 'FuturaStd', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+
+  letter-spacing: 1px;
+}
+
+.blackFont {
+  color: black !important;
 }
 
 .centered {
@@ -346,15 +391,23 @@ table {
   height: 100%;
 }
 
-._cardMask {
-  border-top-right-radius: 18px;
-  border-top-left-radius: 18px;
-}
-
 .cardImage {
   background-repeat: no-repeat;
   background-size: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
+
+.cardImageBorder {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.cardMaskBorder {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
 .cardImage1 {
   background-image: url('./images/card1.jpg');
 }
@@ -376,6 +429,11 @@ table {
   width: 100%;
   height: 100%;
 }
+
+.lineHeightMore {
+  line-height: 34px !important;
+}
+
 .cardWrapper {
   position: relative;
   padding: 18px;
@@ -393,7 +451,7 @@ table {
 .question {
   text-align: center;
   color: #fff;
-  font-family: 'futura-pt', 'FuturaStd', Helvetica, Arial, sans-serif;
+  font-family: 'futura-pt-bold', 'FuturaStd', Helvetica, Arial, sans-serif;
   font-weight: 900;
   font-size: 36px;
   line-height: 44px;
@@ -404,7 +462,7 @@ table {
 .question_minified {
   text-align: center;
   color: black;
-  font-family: 'futura-pt', 'FuturaStd', Helvetica, Arial, sans-serif;
+  font-family: 'futura-pt-bold', 'FuturaStd', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 23px;
@@ -418,7 +476,7 @@ table {
   text-align: center;
   color: black;
   font-family: 'futura-pt', 'FuturaStd', Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
   font-size: 20px;
   line-height: 20px;
@@ -434,7 +492,7 @@ table {
   line-height: 18px;
   letter-spacing: 0;
   color: #fff;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 .informationLarge {
   font-size: 20px;

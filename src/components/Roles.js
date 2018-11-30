@@ -46,13 +46,11 @@ export default class Roles extends React.Component {
         <HoveredFlexCenter>
           {isActive ? (
             <div className="canvas">
-              <div className="cardImage cardImage2" />
-              <div className="cardMask" />
+              <div className="cardImage cardImage2 cardImageBorder" />
+              <div className="cardMask cardMaskBorder" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
                 <h3 className="question">{question}</h3>
-
-                <p className="information informationLarge">{description}</p>
 
                 <form>
                   {answers.map(

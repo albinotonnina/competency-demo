@@ -37,8 +37,8 @@ export default class Grades extends React.Component {
         <HoveredFlexCenter>
           {isActive ? (
             <div className="canvas">
-              <div className="cardImage cardImage4" />
-              <div className="cardMask" />
+              <div className="cardImage cardImageBorder cardImage4" />
+              <div className="cardMask cardMaskBorder" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
                 <h3 className="question">{question}</h3>

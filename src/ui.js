@@ -14,9 +14,14 @@ const Container = styled.div`
   width: ${props => props.frameWidth || '50vw'};
   height: ${props => props.frameHeight || 'auto'};
   z-index: ${props => (props.isActive ? 33 : 66)};
+  border-top-left-radius: ${props => (props.noBorder ? 0 : '18px')};
+  border-top-right-radius: ${props => (props.noBorder ? 0 : '18px')};
   position: relative;
   display: flex;
   transform-origin: 50% 50%;
+  position: relative;
+  overflow: hidden;
+
   & > * {
     flex: 1 1 auto;
     overflow: auto;
@@ -27,9 +32,10 @@ const CloseIcon = styled(Icon)`
   cursor: pointer;
   font-size: 2rem;
   position: absolute;
-  right: -2px;
-  top: -3px;
-  color: #ff383f;
+  right: 0px;
+  top: 0px;
+  padding: 8px;
+  color: white;
   transition: color 200ms ease-in;
   &:hover {
     color: #a9a9a9;
@@ -88,17 +94,19 @@ export const Frame = ({
   frameWidth,
   frameHeight,
   render,
-  children
+  children,
+  noBorder
 }) => (
   <Container
     isActive={isActive}
     frameWidth={frameWidth}
     frameHeight={frameHeight}
+    noBorder={noBorder}
   >
     {render ? render() : children}
     {
       <CloseIconWrapper isVisible={isActive}>
-        <CloseIcon type="close-square" onClick={onClickClose} />
+        <CloseIcon type="close" onClick={onClickClose} />
       </CloseIconWrapper>
     }
   </Container>
