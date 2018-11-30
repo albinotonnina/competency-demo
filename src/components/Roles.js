@@ -25,9 +25,10 @@ export default class Roles extends React.Component {
 
   render() {
     const {
+      question,
       title,
       description,
-      specialism,
+      answers,
       isActive,
       actions: {setNextFrame, getNextFrame}
     } = this.props
@@ -39,8 +40,8 @@ export default class Roles extends React.Component {
       <Frame
         onClickClose={this.goBack}
         isActive={isActive}
-        frameWidth="96vw"
-        frameHeight={isActive ? '80vh' : '10vh'}
+        frameWidth="100vw"
+        frameHeight={isActive ? '90vh' : '10vh'}
       >
         <HoveredFlexCenter>
           {isActive ? (
@@ -49,34 +50,48 @@ export default class Roles extends React.Component {
               <div className="cardMask" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
-                <h3 className="question">Question goes here?</h3>
+                <h3 className="question">{question}</h3>
+
                 <p className="information informationLarge">{description}</p>
+
                 <form>
-                  {specialism.map(({title, description, levels}) => (
-                    <div key={title}>
-                      <button
-                        className="optionButton"
-                        onClick={() =>
-                          setNextFrame('Levels', {
-                            levels: levels,
-                            title: title,
-                            description: description
-                          })
-                        }
-                      >
-                        {title}
-                      </button>
-                      <p className="information withBottomMargin">
-                        {description}
-                      </p>
-                    </div>
-                  ))}
+                  {answers.map(
+                    ({
+                      answer,
+                      answers,
+                      question,
+                      title,
+                      description,
+                      levels
+                    }) => (
+                      <div key={answer}>
+                        <button
+                          className="optionButton"
+                          onClick={() =>
+                            setNextFrame('Levels', {
+                              answers,
+                              answer,
+                              question,
+                              title,
+                              description
+                            })
+                          }
+                        >
+                          {answer}
+                        </button>
+                        <p className="information withBottomMargin">
+                          {description}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </form>
               </div>
             </div>
           ) : (
             <div>
-              <h2>{getNextFrame().state.title}</h2>
+              <h2 className="question_minified">{question}</h2>
+              <h3 className="answer_minified">{getNextFrame().state.answer}</h3>
             </div>
           )}
         </HoveredFlexCenter>

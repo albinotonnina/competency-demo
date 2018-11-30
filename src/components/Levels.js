@@ -25,19 +25,22 @@ export default class Levels extends React.Component {
 
   render() {
     const {
+      question,
       title,
       description,
-      levels,
+      answers,
       isActive,
       actions: {setNextFrame, getNextFrame}
     } = this.props
+
+    // debugger //eslint-disable-line
 
     return (
       <Frame
         onClickClose={this.goBack}
         isActive={isActive}
-        frameWidth="96vw"
-        frameHeight={isActive ? '80vh' : '10vh'}
+        frameWidth="100vw"
+        frameHeight={isActive ? '90vh' : '10vh'}
       >
         <HoveredFlexCenter>
           {isActive ? (
@@ -46,22 +49,23 @@ export default class Levels extends React.Component {
               <div className="cardMask" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
-                <h3 className="question">Question goes here?</h3>
+                <h3 className="question">{question}</h3>
                 <p className="information informationLarge">{description}</p>
                 <form>
-                  {levels.map(({title, description, profile}) => (
-                    <div key={title}>
+                  {answers.map(({answer, profile, title, description}) => (
+                    <div key={answer}>
                       <button
                         className="optionButton"
                         onClick={() =>
                           setNextFrame('Profile', {
                             profile,
                             title,
+                            answer,
                             description
                           })
                         }
                       >
-                        {title}
+                        {answer}
                       </button>
                       <p className="information withBottomMargin">
                         {description}
@@ -73,7 +77,8 @@ export default class Levels extends React.Component {
             </div>
           ) : (
             <div>
-              <h2>{getNextFrame().state.title}</h2>
+              <h2 className="question_minified">{question}</h2>
+              <h3 className="answer_minified">{getNextFrame().state.answer}</h3>
             </div>
           )}
         </HoveredFlexCenter>

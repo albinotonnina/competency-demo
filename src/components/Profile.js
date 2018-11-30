@@ -29,21 +29,35 @@ export default class Profile extends React.Component {
       title,
       description,
       profile,
+
       isActive,
-      actions: {setNextFrame}
+      actions: {setNextFrame, getNextFrame}
     } = this.props
 
     return (
       <Frame
         onClickClose={this.goBack}
         isActive={isActive}
-        frameWidth="96vw"
-        frameHeight={isActive ? '80vh' : '10vh'}
+        frameWidth="100vw"
+        frameHeight={isActive ? '90vh' : '10vh'}
       >
         <HoveredFlexCenter>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <h1>Profile Here</h1>
+          {isActive ? (
+            <div className="canvas">
+              <div className="cardImage cardImage3" />
+              <div className="cardMask" />
+              <div className="cardWrapper active">
+                <h2 className="titleText">{title}</h2>
+                {/* <h3 className="question">{question}</h3> */}
+                <p className="information informationLarge">{description}</p>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <h2 className="question_minified">-</h2>
+              <h3 className="answer_minified">-</h3>
+            </div>
+          )}
         </HoveredFlexCenter>
       </Frame>
     )

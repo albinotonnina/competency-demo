@@ -5,40 +5,118 @@
   "title": "Career Acer",
   "description":
     "Let’s smash those career ceilings together. Let’s use the Career Acer to look at your career options at ASOS. We have literally hundreds of roles for you to explore to help you map out your exciting future.",
-  "cta_question": "Who are you",
-  "int_ext": [
+  "question": "Who are you?",
+  "answers": [
     {
-      "title": "An awesome ASOSer already?",
-      "department": {
-        "values": [
-          {
-            "title": "Engineer",
-            "description":
-              "You thrive on nailing tech and playing with the latest tools?",
-            "specialism": [
-              {
-                "title": "Web",
-                "description":
-                  " Are you wanting to build the best web shopping experience in the world?",
-                "levels": [
-                  {
-                    "title": "Senior II",
-                    "description":
-                      "Hey you could lead but you prefer to be hands on and keep delivering great software.",
-                    "profile": {}
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+      "answer": "An awesome ASOSer already",
+      "title": "department",
+      "question": "Hey what area are you most passionate about? ",
+      "description":
+        "What might you want to do next? ASOS has unlimited possibilities don’t let them pass you by. ",
+      "answers": [
+        {
+          "answer": "QA",
+          "description":
+            "Do you like to break things and look to improve every little detail?"
+        },
+        {
+          "answer": "Engineering",
+          "title": "role",
+          "question": "What role is your interest?",
+          "description":
+            "Cool. Your interested in engineering. We love and worship engineers at ASOS. Let’s get specific about your thing.",
+          "answers": [
+            {
+              "answer": "Web",
+              "title": "level",
+              "question": "What level are you?",
+              "description":
+                "Let’s see where you are at in your career. We are passionate about people looking for the next step so don’t be scared to reach higher.",
+              "answers": [
+                {
+                  "answer": "Grad",
+                  "description":
+                    "Have you got real passion but little or no experience and want to be part of a team who will help you be the best?"
+                },
+                {
+                  "answer": "Associate",
+                  "description":
+                    "Are you getting started and want to learn from some of the best?"
+                },
+                {
+                  "answer": "Web Engineer",
+                  "description":
+                    "You know your stuff but are looking to master how to build awesome web applications?"
+                },
+                {
+                  "answer": "Senior",
+                  "description":
+                    "You are a master of web technologies, can mentor people and take on challenge after challenge"
+                },
+                {
+                  "answer": "Senior II",
+                  "description":
+                    "Hey you could lead but you prefer to be hands on and keep delivering great software.",
+                  "profile": {}
+                },
+                {
+                  "answer": "Lead",
+                  "description":
+                    "The responsibility of leading a team to produce truly excellent experiences for our users is your next challenge?"
+                }
+              ]
+            },
+            {
+              "answer": "Infrastructure",
+              "description":
+                "You love getting down with the latest cloud technologies?"
+            },
+            {
+              "answer": "Android",
+              "description":
+                "Do you want to work on a 5* App with millions of users?"
+            },
+            {
+              "answer": "Microservices",
+              "description":
+                "You love engineering scalable architectural solutions?"
+            },
+            {
+              "answer": "iOS",
+              "description":
+                "Do you want to work on a 5* App with millions of users?"
+            },
+            {
+              "answer": "Platform Engineer",
+              "description": "Are you a DevOps evangelist?"
+            }
+          ]
+        },
+        {
+          "answer": "UX Designer",
+          "description":
+            "Is Innovating our shopping experience is where your at?"
+        },
+        {
+          "answer": "Pattern Cutter",
+          "description":
+            "Can you see yourself creating clothes that delight our 20 something customers."
+        },
+        {
+          "answer": "BA",
+          "description": "Do you love translating Business ideas into reality?"
+        },
+        {
+          "answer": "Exec",
+          "description": "Do you like private jets and Rolls Royce’s?"
+        }
+      ]
     },
     {
-      "title": "A future ASOSer?",
-      "department": {
-        "values": []
-      }
+      "question": "",
+      "description": "",
+      "answer": "A future ASOSer",
+      "department": {}
     }
   ]
 }

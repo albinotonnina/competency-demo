@@ -24,17 +24,15 @@ export default class Grades extends React.Component {
 
   render() {
     const {data, isActive, actions: {setNextFrame, getNextFrame}} = this.props
-    const {title, department} = data
-
-    const grades = department.values
-
+    const {title, answers, question, description} = data
     // debugger //eslint-disable-line
+    // console.log('getNextFrame().state', getNextFrame().state)
     return (
       <Frame
         onClickClose={this.goBack}
         isActive={isActive}
-        frameWidth="96vw"
-        frameHeight={isActive ? '80vh' : '10vh'}
+        frameWidth="100vw"
+        frameHeight={isActive ? '90vh' : '10vh'}
       >
         <HoveredFlexCenter>
           {isActive ? (
@@ -43,42 +41,40 @@ export default class Grades extends React.Component {
               <div className="cardMask" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
-                <h3 className="question">Question goes here?</h3>
-                <p className="information informationLarge">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
-                  <br />
-                  <br />
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <h3 className="question">{question}</h3>
+                <p className="information informationLarge">{description}</p>
 
                 <form>
-                  {grades.map(({title, description, specialism}) => (
-                    <div key={title}>
-                      <button
-                        className="optionButton"
-                        onClick={() =>
-                          setNextFrame('Roles', {
-                            title,
-                            description,
-                            specialism
-                          })
-                        }
-                      >
-                        {title}
-                      </button>
-                      <p className="information withBottomMargin">
-                        {description}
-                      </p>
-                    </div>
-                  ))}
+                  {answers.map(
+                    ({title, question, answer, description, answers}) => (
+                      <div key={answer}>
+                        <button
+                          className="optionButton"
+                          onClick={() =>
+                            setNextFrame('Roles', {
+                              title,
+                              answer,
+                              question,
+                              description,
+                              answers
+                            })
+                          }
+                        >
+                          {answer}
+                        </button>
+                        <p className="information withBottomMargin">
+                          {description}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </form>
               </div>
             </div>
           ) : (
             <div>
-              <h2>{getNextFrame().state.title}</h2>
+              <h2 className="question_minified">{question}</h2>
+              <h3 className="answer_minified">{getNextFrame().state.answer}</h3>
             </div>
           )}
         </HoveredFlexCenter>

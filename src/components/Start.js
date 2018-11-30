@@ -25,43 +25,46 @@ export default class Start extends React.Component {
   render() {
     const {isActive, actions: {setNextFrame, getNextFrame}} = this.props
 
-    const {title, description, int_ext, cta_question} = Data
+    const {title, description, answers, question} = Data
 
     return (
       <Frame
         onClickClose={this.goBack}
         isActive={isActive}
-        frameWidth="96vw"
-        frameHeight={isActive ? '80vh' : '10vh'}
+        frameWidth={isActive ? '100vw' : '100vw'}
+        frameHeight={isActive ? '100vh' : '10vh'}
       >
         <HoveredFlexCenter>
           {isActive ? (
-            <div className="canvas">
+            <div className="canvas centered">
               <div className="cardImage cardImage1" />
               <div className="cardMask" />
               <div className="cardWrapper active">
                 <h2 className="titleText">{title}</h2>
-                <h3 className="question">{cta_question}</h3>
+                <h3 className="question">{question}</h3>
                 <p className="information informationLarge">{description}</p>
                 <form>
                   <h3
                     className="question"
-                    onClick={() => setNextFrame('Grades', {data: int_ext[0]})}
+                    onClick={() => setNextFrame('Grades', {data: answers[0]})}
                   >
-                    {int_ext[0].title}
+                    {answers[0].answer}
                   </h3>
                   <h3
                     className="question"
-                    onClick={() => setNextFrame('Grades', {data: int_ext[1]})}
+                    onClick={() => setNextFrame('Grades', {data: answers[1]})}
                   >
-                    {int_ext[1].title}
+                    {answers[1].answer}
                   </h3>
                 </form>
               </div>
             </div>
           ) : (
             <div>
-              <h2>{getNextFrame().state.data.title}</h2>
+              <h2 className="question_minified">{question}</h2>
+              <h3 className="answer_minified">
+                {getNextFrame().state.data.answer}
+              </h3>
             </div>
           )}
         </HoveredFlexCenter>

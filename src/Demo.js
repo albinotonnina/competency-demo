@@ -15,7 +15,7 @@ export default class Demo extends Component {
       isActive: activePage === page,
       isAnimating: this.state.isAnimating
     }
-    console.log('Components', Components)
+    // console.log('Components', Components)
     const Page = id ? Components[id] : Components.Start
 
     return <Page {...extraProps} {...state} actions={actions} />
@@ -36,10 +36,12 @@ export default class Demo extends Component {
 
           const onEndAnimation = frames => {
             this.setState({isAnimating: false})
-            if (frames.length === 0) {
-              this.setState({isOpen: false})
-              window.requestAnimationFrame(() => closePortal())
-            }
+            // console.log('frames.length', frames)
+            // console.log('this.state', this.state)
+            // if (frames.length === 0) {
+            // this.setState({isOpen: false})
+            // window.requestAnimationFrame(() => closePortal())
+            // }
           }
           return [
             <AppHeader
